@@ -1,0 +1,7 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>NetScreen Installation</title><style>body{max-width:850px;margin:40px auto;padding:0 20px;font:16px system-ui;line-height:1.7;background:#0a0e13;color:#e9eef5}a{color:#2fbfae}pre{background:#121a24;padding:16px;overflow:auto;border-radius:8px}code{color:#2fbfae}</style></head><body><h1>NetScreen installation</h1><p>Free network monitoring with FastAPI, SQLite and a vanilla JavaScript dashboard.</p><h2>Docker</h2><pre>git clone https://github.com/imrezafattahi/NetScreen.git
+cd NetScreen
+docker compose up -d</pre><h2>Local</h2><pre>python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+uvicorn app.main:app --app-dir backend --reload</pre><h2>URLs</h2><p><a href='/'>Dashboard</a> · <a href='/api/docs'>API docs</a> · <a href='/api/health'>Health</a></p><h2>Monitoring</h2><p>Add ping, HTTP, HTTPS or DNS targets. Results are stored in SQLite. Ping uses ICMP where supported and a labelled TCP fallback otherwise. HTTPS checks include basic certificate connectivity and HTTP status monitoring.</p><h2>Optional Telegram</h2><pre>TELEGRAM_BOT_TOKEN=
+TELEGRAM_CHAT_ID=</pre></body></html>

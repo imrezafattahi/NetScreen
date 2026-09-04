@@ -1,0 +1,11 @@
+services:
+  netscreen:
+    build: .
+    ports: ['8000:8000']
+    volumes: [netscreen-data:/app/data]
+    environment:
+      NETSCREEN_DATA_DIR: /app/data
+      NETSCREEN_DATABASE_URL: sqlite:////app/data/netscreen.db
+    cap_add: [NET_RAW]
+volumes:
+  netscreen-data:
